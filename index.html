@@ -1,161 +1,192 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olba Agency</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olba Agency</title>
 
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        body, html {
-            height: 100%;
-            width: 100%;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #000;
-            overflow: hidden; /* Keeps it strictly one-page */
-        }
+<style>
 
-        /* Animation Keyframes */
-        @keyframes fadeSlideUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* RESET */
 
-        @keyframes bgZoom {
-            0% {
-                transform: scale(1.1);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-        /* Hero Section Container */
-        .hero-wrapper {
-            height: 100vh;
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            background-color: #000;
-        }
+body,html{
+height:100%;
+width:100%;
+font-family:'Montserrat',sans-serif;
+background-color:#000;
+overflow:hidden;
+}
 
-        /* Background Image with Zoom-in Entrance */
-        .hero-section {
-            background-image: url('wallpaper_olba.png');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            /* Entrance animation for the background */
-            animation: bgZoom 1.2s ease-out forwards;
-            display: flex;
-            align-items: flex-end;
-        }
+/* ANIMATIONS */
 
-        /* Container for the buttons */
-        .social-container {
-            margin-bottom: 250px;
-            margin-left: 5.5%;
-            display: flex;
-            gap: 15px;
-            z-index: 10;
-            /* Entrance animation for the buttons - delayed slightly */
-            opacity: 0;
-            animation: fadeSlideUp 0.8s ease-out 0.8s forwards;
-        }
+@keyframes fadeSlideUp{
+0%{
+opacity:0;
+transform:translateY(30px);
+}
+100%{
+opacity:1;
+transform:translateY(0);
+}
+}
 
-        /* Button Styling */
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 14px 28px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.6);
-            white-space: nowrap;
-        }
+@keyframes bgZoom{
+0%{
+transform:scale(1.1);
+opacity:0;
+}
+100%{
+transform:scale(1);
+opacity:1;
+}
+}
 
-        .btn:hover {
-            transform: translateY(-5px);
-            filter: brightness(1.1);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.8);
-        }
+/* HERO CONTAINER */
 
-        .btn:active {
-            transform: scale(0.95);
-        }
+.hero-wrapper{
+height:100vh;
+width:100%;
+overflow:hidden;
+position:relative;
+background:#000;
+}
 
-        .btn-whatsapp { background-color: #25D366; }
-        .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+/* BACKGROUND */
 
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 768px) {
-            .hero-section {
-                background-position: 30% center; 
-            }
+.hero-section{
+background-image:url('wallpaper_olba.png');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
 
-            .social-container {
-                margin-left: 0;
-                margin-bottom: 40px;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
+height:100vh;
+width:100%;
 
-            .btn {
-                width: 85%;
-                font-size: 15px;
-                padding: 16px;
-            }
-        }
-    </style>
+position:absolute;
+top:0;
+left:0;
+
+animation:bgZoom 1.2s ease-out forwards;
+
+display:flex;
+align-items:flex-end;
+}
+
+/* BUTTON CONTAINER */
+
+.social-container{
+margin-bottom:250px;
+margin-left:5.5%;
+display:flex;
+gap:15px;
+z-index:10;
+
+opacity:0;
+animation:fadeSlideUp 0.8s ease-out 0.8s forwards;
+}
+
+/* BUTTON STYLE */
+
+.btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+
+padding:14px 28px;
+border-radius:12px;
+
+text-decoration:none;
+color:white;
+
+font-size:16px;
+font-weight:700;
+
+transition:all .3s ease;
+
+box-shadow:0 4px 25px rgba(0,0,0,.6);
+white-space:nowrap;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+filter:brightness(1.1);
+box-shadow:0 8px 30px rgba(0,0,0,.8);
+}
+
+.btn:active{
+transform:scale(.95);
+}
+
+.btn-whatsapp{
+background:#25D366;
+}
+
+.btn-instagram{
+background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+}
+
+/* MOBILE VERSION */
+
+@media (max-width:768px){
+
+.hero-section{
+background-image:url('wallpaper_olba_mobile.png');
+background-size:cover;
+background-position:center;
+}
+
+.social-container{
+margin-left:0;
+margin-bottom:40px;
+width:100%;
+
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
+
+.btn{
+width:85%;
+font-size:15px;
+padding:16px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="hero-wrapper">
-        <div class="hero-section">
-            <div class="social-container">
-                
-                <a href="https://wa.me/21629846294" target="_blank" class="btn btn-whatsapp">
-                    Contactez-nous <i class="fab fa-whatsapp"></i>
-                </a>
+<div class="hero-wrapper">
 
-                <a href="https://instagram.com/olba.agency" target="_blank" class="btn btn-instagram">
-                    Visitez-nous <i class="fab fa-instagram"></i>
-                </a>
+<div class="hero-section">
 
-            </div>
-        </div>
-    </div>
+<div class="social-container">
+
+<a href="https://wa.me/21629846294" target="_blank" class="btn btn-whatsapp">
+Contactez-nous <i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="https://instagram.com/olba.agency" target="_blank" class="btn btn-instagram">
+Visitez-nous <i class="fab fa-instagram"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
