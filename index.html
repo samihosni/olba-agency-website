@@ -18,30 +18,33 @@
 
         body, html {
             height: 100%;
+            width: 100%;
             font-family: 'Montserrat', sans-serif;
-            background-color: #111; /* Fallback color */
+            background-color: #000;
+            overflow: hidden; /* Prevents scrollbars */
         }
 
-        /* Background Image Setup */
+        /* The Hero Section using your GitHub image */
         .hero-section {
-            /* Make sure the image file is in the same folder and named exactly like this */
             background-image: url('wallpaper_olba.png');
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             background-repeat: no-repeat;
             height: 100vh;
-            width: 100%;
+            width: 100vw;
             position: relative;
+            display: flex;
+            align-items: flex-end; /* Puts buttons at the bottom */
+            justify-content: flex-start;
         }
 
         /* Container for the buttons */
         .social-container {
-            position: absolute;
-            bottom: 10%; /* Positions it in the dark empty space at the bottom */
-            left: 5%;    /* Aligns it roughly with the text above */
+            margin-bottom: 50px;
+            margin-left: 5%;
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 15px;
+            z-index: 10;
         }
 
         /* Button Styling */
@@ -49,47 +52,40 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 24px;
-            border-radius: 30px;
+            padding: 12px 20px;
+            border-radius: 8px;
             text-decoration: none;
             color: white;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            filter: brightness(1.1);
         }
 
-        .btn i {
-            font-size: 20px;
-        }
-
-        /* WhatsApp Button Colors */
+        /* WhatsApp Style */
         .btn-whatsapp {
             background-color: #25D366;
         }
 
-        /* Instagram Button Colors */
+        /* Instagram Style */
         .btn-instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
             .social-container {
-                bottom: 5%;
-                left: 50%;
-                transform: translateX(-50%);
                 flex-direction: column;
-                align-items: center;
+                bottom: 20px;
                 width: 90%;
             }
             .btn {
-                width: 100%;
-                justify-content: center;
+                width: fit-content;
             }
         }
     </style>
@@ -98,11 +94,11 @@
 
     <div class="hero-section">
         <div class="social-container">
-            <a href="https://wa.me/29846294" target="_blank" class="btn btn-whatsapp">
+            <a href="https://wa.me/21600000000" target="_blank" class="btn btn-whatsapp">
                 Contactez-nous <i class="fab fa-whatsapp"></i>
             </a>
 
-            <a href="https://instagram.com/olba.agency" target="_blank" class="btn btn-instagram">
+            <a href="https://instagram.com/olba_agency" target="_blank" class="btn btn-instagram">
                 Visitez-nous <i class="fab fa-instagram"></i>
             </a>
         </div>
