@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
@@ -21,86 +22,138 @@
             width: 100%;
             font-family: 'Montserrat', sans-serif;
             background-color: #000;
-            overflow: hidden; /* Prevents scrollbars */
+            overflow: hidden; /* Keeps it strictly one-page */
         }
 
-        /* The Hero Section using your GitHub image */
+        /* Animation Keyframes */
+        @keyframes fadeSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bgZoom {
+            0% {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Hero Section Container */
+        .hero-wrapper {
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: #000;
+        }
+
+        /* Background Image with Zoom-in Entrance */
         .hero-section {
             background-image: url('wallpaper_olba.png');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
             height: 100vh;
-            width: 100vw;
-            position: relative;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* Entrance animation for the background */
+            animation: bgZoom 1.2s ease-out forwards;
             display: flex;
-            align-items: flex-end; /* Puts buttons at the bottom */
-            justify-content: flex-start;
+            align-items: flex-end;
         }
 
         /* Container for the buttons */
         .social-container {
-            margin-bottom: 50px;
-            margin-left: 5%;
+            margin-bottom: 250px;
+            margin-left: 5.5%;
             display: flex;
             gap: 15px;
             z-index: 10;
+            /* Entrance animation for the buttons - delayed slightly */
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease-out 0.8s forwards;
         }
 
         /* Button Styling */
         .btn {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 20px;
-            border-radius: 8px;
+            justify-content: center;
+            gap: 12px;
+            padding: 14px 28px;
+            border-radius: 12px;
             text-decoration: none;
             color: white;
-            font-size: 15px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 700;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.6);
+            white-space: nowrap;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
             filter: brightness(1.1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.8);
         }
 
-        /* WhatsApp Style */
-        .btn-whatsapp {
-            background-color: #25D366;
+        .btn:active {
+            transform: scale(0.95);
         }
 
-        /* Instagram Style */
-        .btn-instagram {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-        }
+        .btn-whatsapp { background-color: #25D366; }
+        .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 
-        /* Mobile adjustments */
-        @media (max-width: 600px) {
-            .social-container {
-                flex-direction: column;
-                bottom: 20px;
-                width: 90%;
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .hero-section {
+                background-position: 30% center; 
             }
+
+            .social-container {
+                margin-left: 0;
+                margin-bottom: 40px;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
             .btn {
-                width: fit-content;
+                width: 85%;
+                font-size: 15px;
+                padding: 16px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="hero-section">
-        <div class="social-container">
-            <a href="https://wa.me/21600000000" target="_blank" class="btn btn-whatsapp">
-                Contactez-nous <i class="fab fa-whatsapp"></i>
-            </a>
+    <div class="hero-wrapper">
+        <div class="hero-section">
+            <div class="social-container">
+                
+                <a href="https://wa.me/21629846294" target="_blank" class="btn btn-whatsapp">
+                    Contactez-nous <i class="fab fa-whatsapp"></i>
+                </a>
 
-            <a href="https://instagram.com/olba_agency" target="_blank" class="btn btn-instagram">
-                Visitez-nous <i class="fab fa-instagram"></i>
-            </a>
+                <a href="https://instagram.com/olba.agency" target="_blank" class="btn btn-instagram">
+                    Visitez-nous <i class="fab fa-instagram"></i>
+                </a>
+
+            </div>
         </div>
     </div>
 
